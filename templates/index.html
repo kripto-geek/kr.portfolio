@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-image"></div>
+    <nav>
+        <div class="container">
+            <div class="logo-container">
+                <span class="logo-text">Kumar</span>
+                <a href="#" class="logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+                </a>
+                <span class="logo-text">Gaurav</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="glass">
+        <div class="content">
+            <div class="profile-section" id="profile-section">
+                <h1 class="animated-heading"><span class="dot">•</span> About Me</h1>
+                <div class="profile-container">
+                    <div class="profile-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Picture" class="profile-image">
+                </div>
+            </div>
+
+            <div class="project-section" id="project-section" style="display: none;">
+                <h1 class="animated-heading"><span class="dot">•</span> Project 1</h1>
+                <p>Short description of project 1.</p>
+            </div>
+
+            <div class="project-section" id="project-section-2" style="display: none;">
+                <h1 class="animated-heading"><span class="dot">•</span> Project 2</h1>
+                <p>Short description of project 2.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button" id="prev-button"><img src="{{ url_for('static', filename='images/prev.png') }}" alt="Previous"></button>
+        <button class="nav-button" id="next-button"><img src="{{ url_for('static', filename='images/next.png') }}" alt="Next"></button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Kumar Gaurav. All rights reserved.</p>
+        <p>Contact: email@example.com</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

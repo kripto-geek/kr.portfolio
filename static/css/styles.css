@@ -1,0 +1,180 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.background-image {
+    background: url('../images/your_background_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+nav {
+    background: transparent;
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 100px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Match the logo's design for shadow */
+    margin: 0 10px;
+}
+
+.logo-text {
+    font-family: 'Press Start 2P', cursive;
+    color: #94bff3;
+    font-size: 24px;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 790px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    animation: float 5s infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.profile-section .profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-text {
+    flex: 1;
+    text-align: left;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.profile-section img {
+    border-radius: 10px;
+    width: 150px;
+    height: 200px;
+    margin-left: 20px;
+    transition: transform 0.3s;
+}
+
+.profile-section img:hover {
+    transform: scale(1.1);
+}
+
+.animated-heading {
+    font-family: 'Press Start 2P', cursive;
+    animation: fadeIn 1s ease-in-out, 2s infinite;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left; /* Align to the left */
+    position: relative;
+    padding-left: 40px; /* Add space for the dot */
+}
+
+.animated-heading::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #94bff3;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.dot {
+    font-size: 36px;
+    color: #94bff3;
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shadow-pulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    }
+}
+
+.nav-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-button img {
+    width: 40px;
+    height: 40px;
+}
+
+#prev-button {
+    left: 10px;
+}
+
+#next-button {
+    right: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+}
