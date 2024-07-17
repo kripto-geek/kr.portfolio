@@ -1,61 +1,180 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="background-image"></div>
-    <nav>
-        <div class="container">
-            <div class="logo-container">
-                <span class="logo-text">Kumar</span>
-                <a href="#" class="logo">
-                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-                </a>
-                <span class="logo-text">Gaurav</span>
-            </div>
-        </div>
-    </nav>
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    <div class="glass">
-        <div class="content">
-            <div class="profile-section" id="profile-section">
-                <h1 class="animated-heading"><span class="dot">•</span> About Me</h1>
-                <div class="profile-container">
-                    <div class="profile-text">
-                        <p>Hey there! This is official portfolio of Kuamr Gaurav. Kumar Gaurav is in tech field since the age of 14, His current age is 19 y/o. <br><br><b> Current Qualifications - </b><br> IBM professional certificate in Ethical Hacking <br> BCA Degree From Indira Gandhi National University <br><br> Currently working on several programing, Pentesting, bug hunting, and self- development projects. <br>You Can see the project details On the next slides
-                        </p>
-                    </div>
-                    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile Picture" class="profile-image">
-                </div>
-            </div>
+.background-image {
+    background: url('../images/your_background_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 
-            <div class="project-section" id="project-section" style="display: none;">
-                <h1 class="animated-heading"><span class="dot">•</span> Project 1</h1>
-                <p>Short description of project 1.</p>
-            </div>
+nav {
+    background: transparent;
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
 
-            <div class="project-section" id="project-section-2" style="display: none;">
-                <h1 class="animated-heading"><span class="dot">•</span> Project 2</h1>
-                <p>Short description of project 2.</p>
-            </div>
-        </div>
-    </div>
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    <div class="navigation">
-        <button class="nav-button" id="prev-button"><img src="{{ url_for('static', filename='images/prev.png') }}" alt="Previous"></button>
-        <button class="nav-button" id="next-button"><img src="{{ url_for('static', filename='images/next.png') }}" alt="Next"></button>
-    </div>
+nav .logo img {
+    height: 100px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Match the logo's design for shadow */
+    margin: 0 10px;
+}
 
-    <footer>
-        <p>&copy; 2024 Kumar Gaurav. All rights reserved.</p>
-        <p>Contact: email@example.com</p>
-    </footer>
+.logo-text {
+    font-family: 'Press Start 2P', cursive;
+    color: #94bff3;
+    font-size: 24px;
+}
 
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-</body>
-</html>
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 790px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    animation: float 5s infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.profile-section .profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-text {
+    flex: 1;
+    text-align: left;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.profile-section img {
+    border-radius: 10px;
+    width: 150px;
+    height: 200px;
+    margin-left: 20px;
+    transition: transform 0.3s;
+}
+
+.profile-section img:hover {
+    transform: scale(1.1);
+}
+
+.animated-heading {
+    font-family: 'Press Start 2P', cursive;
+    animation: fadeIn 1s ease-in-out, 2s infinite;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left; /* Align to the left */
+    position: relative;
+    padding-left: 40px; /* Add space for the dot */
+}
+
+.animated-heading::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #94bff3;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.dot {
+    font-size: 36px;
+    color: #94bff3;
+    position: absolute;
+    left: 0;
+    top: -10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shadow-pulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    }
+}
+
+.nav-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-button img {
+    width: 40px;
+    height: 40px;
+}
+
+#prev-button {
+    left: 10px;
+}
+
+#next-button {
+    right: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+}
